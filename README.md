@@ -80,8 +80,6 @@ cd projectsphere
 
 python -m venv env
 env\Scripts\activate   # Windows
-# source env/bin/activate   # Linux/Mac
-
 
 3. nstall dependencies
 
