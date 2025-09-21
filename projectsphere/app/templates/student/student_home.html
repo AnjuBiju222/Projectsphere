@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/home.css">
+    <title>Project Management</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">PROJECTSPHERE</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="student_home">Home</a></li>
+            <li><a href="view_calender">Calender</a></li>
+            <li><a href="submit_resource">Resources</a></li>
+            <!-- <li><a href="#">Account</a></li> -->
+            <li><a href="logout_view">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Your content goes here --> 
+    <div class="container">
+        <section class="hero">
+            <h1>Welcome,<span id="project"> {{name}}!</span> </h1>
+            <p id="tasks">Manage projects, tasks, and collaborate seamlessly.</p>
+        </section>
+        <section class="features">
+            <div class="feature">
+                <a href="register_project">
+
+                    <h2>Register Project</h2>
+                </a>
+                    <p>Manage project details, assign tasks, and monitor progress efficiently.</p>
+                
+            </div>
+            <div class="feature">
+                <a href="student_view_announcement">
+                    <h2>Announcement</h2>
+                </a>
+                
+                <p>Stay connected with team members, share important files, and brainstorm ideas effectively.</p>
+            </div>
+            <div class="feature">
+                <a href="student_chat">
+                    <h2>Q&A</h2>
+                </a>
+                
+                <p>Get valuable insights using project analytics and keep track of team performance metrics.</p>
+            </div>
+            <div class="feature">
+                <a href="student_progress">
+                    <h2>Progress</h2>
+                </a>
+                    <p>Review team progress, collaborate on tasks, and ensure project milestones are met.</p>
+
+                
+            </div>
+            <div class="feature">
+                <a href="view_reviews">
+                    <h2>Review Marks</h2>
+                </a>
+                    <p>View the marks for your project submissions.</p>
+
+                
+            </div>
+        </section>
+        
+    </div>
+
+</body>
+
+</html>

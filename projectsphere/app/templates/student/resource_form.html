@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/coordinator_home.css' %}">
+    <title>Project Management</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="logo">
+            <a class="navbar-brand" href="#">PROJECTSPHERE</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav-links">
+                <li><a href="student_home">Home</a></li>
+                <li><a href="view_calender">Calender</a></li>
+                <li><a href="submit_resource">Resources</a></li>
+                <!-- <li><a href="#">Account</a></li> -->
+                <li><a href="logout_view">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="hero mt-5">
+            <h1>Welcome, <span id="project">{{name}}</span> </h1>
+        </section>
+        <section >
+            <!-- <h2>Create Announcement</h2> -->
+            <form method="post">
+                {% csrf_token %}
+                <div class="container">
+                    <div class="form-group">
+                        <label for="subject">Week</label>
+                        <input type="text" value="{{key.week}}" class="form-control" id="subject" name="subject" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Submit</label>
+                        <input type="text" value="{{key.submit}}" class="form-control" id="date" name="date" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Drive Link</label>
+                        <textarea class="form-control" id="message" name="drive_link_val" rows="4" required></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- <footer class="footer mt-5">
+        <div class="container">
+            <p>&copy; 2024 Project Management</p>
+        </div>
+    </footer> -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

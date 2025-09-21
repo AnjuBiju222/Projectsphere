@@ -1,0 +1,17 @@
+.featuress-c{
+    display: flex;
+    gap: 3rem;
+    margin-left: 2rem;
+    /* justify-content: space-around; */
+}
+#link-c{
+    color: black;
+}
+.va{
+    color: black;
+}
+
+
+.link-c a:hover {
+    color: #f16a0f; /* Change to your desired hover color */
+}

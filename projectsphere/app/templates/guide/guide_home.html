@@ -1,0 +1,53 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/home.css">
+    <title>Project Management</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">PROJECTSPHERE</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="guide_home">Home</a></li>
+            <!-- <li><a href="#">Account</a></li> -->
+            <li><a href="logout_view">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Your content goes here --> 
+    <div class="container">
+        <section class="hero">
+            <h1>Welcome,<span id="project"> {{name}}!</span> </h1>
+            <p id="tasks">Manage projects, tasks, and collaborate seamlessly.</p>
+        </section>
+        <section class="features">
+            <div class="feature">
+                <a href="guide_view_team">
+                    <h2>View Team</h2>
+                </a>
+                    <p>Guide teams through project reviews, provide feedback, and ensure project quality.</p>
+            
+            </div>
+            
+            <!-- <div class="feature">
+                <h2>Resources</h2>
+                <p>Access and review the documents submitted by teams for project milestones and provide valuable feedback.</p>
+            </div> -->
+            
+        </section>
+        
+    </div>
+
+</body>
+
+</html>
+

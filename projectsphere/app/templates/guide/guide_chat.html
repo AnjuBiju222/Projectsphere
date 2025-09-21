@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Project</title>
+    <!-- Link Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Link your custom CSS files -->
+    <link rel="stylesheet" href="static/css/register_project.css">
+    <link rel="stylesheet" href="static/css/home.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">PROJECTSPHERE</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="guide_home">Home</a></li>
+            <!-- <li><a href="#">Account</a></li> -->
+            <li><a href="logout_view">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        
+        <div class="container">
+            <h1>Chat</h1>
+            <div class="chat-history">
+                {% for chat in old_chats %}
+                    <div class="chat-message">
+                        <p>{{chat.user.first_name}}:{{ chat.message }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <form method="post" action="{% url 'guide_send_chat' %}">
+                {% csrf_token %}
+                <input type="hidden" name="ids" value="{{id}}">
+                <input type="text" name="message" placeholder="Type your message here..." required>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Link Bootstrap JS and Popper.js (required for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    
+</body>
+
+</html>

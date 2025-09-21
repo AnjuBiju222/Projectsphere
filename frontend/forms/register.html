@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px 50px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+        #projectForm{
+            width: 70%;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #ff7600;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e66109;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Register Project</h2>
+        <form id="projectForm">
+            <div class="form-group">
+                <label for="teamName">Project Team Name:</label>
+                <input type="text" id="teamName" name="teamName" required>
+            </div>
+            <div class="form-group">
+                <label for="projectTitle">Project Title:</label>
+                <input type="text" id="projectTitle" name="projectTitle" required>
+            </div>
+            <div class="form-group">
+                <label for="teamHeadName">Team Head Name:</label>
+                <input type="text" id="teamHeadName" name="teamHeadName" required>
+            </div>
+            <div class="form-group">
+                <label for="teamHeadId">Team Head ID:</label>
+                <input type="text" id="teamHeadId" name="teamHeadId" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="teamMember1">Team Member 1:</label>
+                <input type="text" id="teamMember1" name="teamMember1" required>
+            </div>
+            <div class="form-group">
+                <label for="teamMember1Id">Team Member 1 ID:</label>
+                <input type="text" id="teamMember1Id" name="teamMember1Id" required>
+            </div>
+            <div class="form-group">
+                <label for="teamMember2">Team Member 2:</label>
+                <input type="text" id="teamMember2" name="teamMember2" required>
+            </div>
+            <div class="form-group">
+                <label for="teamMember2Id">Team Member 2 ID:</label>
+                <input type="text" id="teamMember2Id" name="teamMember2Id" required>
+            </div>
+            <div class="form-group">
+                <label for="teamMember3">Team Member 3:</label>
+                <input type="text" id="teamMember3" name="teamMember3" required>
+            </div>
+            <div class="form-group">
+                <label for="teamMember3Id">Team Member 3 ID:</label>
+                <input type="text" id="teamMember3Id" name="teamMember3Id" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        // You can add JavaScript validation or submission handling here
+        document.getElementById('projectForm').addEventListener('submit', function(event) {
+            // Add your form submission logic here
+            alert('Form submitted successfully!');
+            // Prevent the default form submission
+            event.preventDefault();
+        });
+    </script>
+</body>
+
+</html>

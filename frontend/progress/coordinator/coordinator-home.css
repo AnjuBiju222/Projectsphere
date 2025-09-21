@@ -1,0 +1,9 @@
+.features-c{
+    display: flex;
+    gap: 3rem;
+    margin-left: 2rem;
+    /* justify-content: space-around; */
+}
+#link-c{
+    color: black;
+}

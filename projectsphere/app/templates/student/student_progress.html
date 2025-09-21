@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/home.css">
+    <link rel="stylesheet" href="static/css/student_progress.css">
+    <title>Project Progress</title>
+
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="logo">
+        <a href="#">PROJECTSPHERE</a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="student_home">Home</a></li>
+        <li><a href="view_calender">Calender</a></li>
+        <li><a href="submit_resource">Resources</a></li>
+        <!-- <li><a href="#">Account</a></li> -->
+        <li><a href="logout_view">Logout</a></li>
+    </ul>
+  </nav>
+    <div class="container">
+        <h2>Project Progress</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{key.teamHeadId}}</td>
+                    <td>{{key.user.email}}</td>
+                    <td>{{key.teamHeadName}}</td>
+                </tr>
+                <!-- Add more rows for team members -->
+            </tbody>
+        </table>
+
+        <!-- Week-wise progress -->
+        <h2>Week-wise progress</h2>
+        {% for i,j in ppp %}
+        <div class="week-progress">
+            <div class="week-label">{{i.week}}</div>
+            <div class="gantt-container">
+                <div class="gantt-bar" style="width: {{j}}%;"><span></span></div>
+            </div>
+        </div>
+        {% endfor %}
+
+        
+        <!-- Add more week progress divs as needed -->
+        <h2 >Overall project progress</h2>
+        <div class="pie-chart-container">
+            <svg viewBox="0 0 100 100" class="pie-chart-svg">
+                <circle cx="50" cy="50" r="40" class="pie-chart-circle"></circle>
+                <circle cx="50" cy="50" r="40" class="pie-chart-value" style="stroke-dasharray: 251.2; stroke-dashoffset: calc(251.2 - (251.2 * 0) / 100);"></circle>
+                <!-- Adjust the stroke-dasharray and stroke-dashoffset based on percentage -->
+                <text x="50" y="50" class="pie-chart-text">0%</text>
+            </svg>
+        </div>
+    </div>
+
+    <script>
+        // Get the value of avg from the server or from a variable
+        var avg = {{avg}};
+    
+        // Update the stroke-dashoffset and text content based on avg
+        document.addEventListener('DOMContentLoaded', function() {
+            var circle = document.querySelector('.pie-chart-value');
+            var text = document.querySelector('.pie-chart-text');
+    
+            var circumference = parseFloat(circle.getAttribute('r')) * 2 * Math.PI;
+            var percentage = (avg / 100) * circumference;
+    
+            circle.style.strokeDasharray = circumference;
+            circle.style.strokeDashoffset = circumference - percentage;
+            text.textContent = avg + "%";
+        });
+    </script>
+</body>
+
+</html>

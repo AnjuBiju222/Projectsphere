@@ -1,0 +1,162 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+   
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+        th {
+            font-weight: bold;
+        }
+
+        .btn-delete {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-delete:hover {
+            background-color: #c82333;
+        }
+        
+.input-field {
+  max-width: 380px;
+  width: 100%;
+  background-color: #aaa;
+  margin: 10px 0;
+  height: 45px;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 0 0.4rem;
+  position: relative;
+}
+
+.input-field i {
+  text-align: center;
+  line-height: 45px;
+  color: #666565;
+  transition: 0.5s;
+  font-size: 1.1rem;
+}
+
+.input-field input {
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+
+.title {
+  font-size: 2.2rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.title1 {
+  font-size: 2.1rem;
+  color: red;
+  margin-bottom: 10px;
+}
+
+
+.input-field input::placeholder {
+  color: #666565;
+  font-weight: 500;
+}
+
+    </style>
+    <title>Staff Management</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">PROJECTSPHERE</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="coordinator_home">Home</a></li>
+            <li><a href="coordinator_calender">Calender</a></li>
+            <li><a href="logout_view">Logout</a></li>
+        </ul>
+    </nav>
+   
+    <div class="container">
+        <div class="forms-container">
+			<div class="signin-signup">
+        <form action="create_guide" method="post" class="sign-up-form">
+            {% csrf_token %}
+  <h2 class="title">Create Guide</h2>
+  <h2 class="title1">{{msg}}</h2>
+            <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input type="text" name="Username" placeholder="Username" />
+            </div>
+            <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input type="text" name="Full_name" placeholder="Full Name" />
+            </div>
+            <div class="input-field">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" placeholder="Email" />
+            </div>
+            <div class="input-field">
+                <i class="fas fa-envelope"></i>
+                <input type="number" name="Phone" placeholder="Phone" />
+            </div>
+            <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="Password" placeholder="Password" />
+            </div>
+            <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="Confirm_password" placeholder="Confirm_password" />
+            </div>
+            <input type="submit" class="btn" value="Create" />
+            
+        </form>
+        </div>
+        </div>
+    </div>
+</body>
+
+</html>

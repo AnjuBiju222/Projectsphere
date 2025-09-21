@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../home.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+        th {
+            font-weight: bold;
+        }
+
+        .btn-delete {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-delete:hover {
+            background-color: #c82333;
+        }
+    </style>
+    <title>Staff Management</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">PROJECTSPHERE</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Account</a></li>
+        </ul>
+    </nav>
+   
+    <div class="container">
+        <h1>Guide Management</h1>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Assigned Team</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>Prof.Dhanya</td>
+                <td>Team A6</td>
+                <td><button class="btn-delete">Delete</button></td>
+            </tr>
+            <tr>
+                <td>Prof.Akhila</td>
+                <td>Team A7</td>
+                <td><button class="btn-delete">Delete</button></td>
+            </tr>
+            <tr>
+                <td>Prof.Neethi</td>
+                <td>Team B1</td>
+                <td><button class="btn-delete">Delete</button></td>
+            </tr>
+            <tr>
+                <td>Prof.Dileep</td>
+                <td>Team B4</td>
+                <td><button class="btn-delete">Delete</button></td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </table>
+    </div>
+</body>
+
+</html>

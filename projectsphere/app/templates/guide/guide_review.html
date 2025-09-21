@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/home.css">
+
+    <title>Team Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 55px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+        }
+
+        .team-card {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 20px);
+            /* Adjust based on the number of teams per row */
+            min-width: 450px;
+            transition: transform 0.3s ease;
+            width: 26%;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-card h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .team-card p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            color: #fff;
+            background-color: #ff6c1d;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #b35400;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">PROJECTSPHERE</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="guide_home">Home</a></li>
+            <!-- <li><a href="#">Account</a></li> -->
+            <li><a href="logout_view">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <!-- Team 1 Card -->
+        
+        <div class="team-card">
+            <div class="btn-container">
+                <button class="btn"><a href="{% url 'guide_review_mark' a.teamHeadName %}"> {{a.teamHeadName}} </a></button>
+                <button class="btn"><a href="{% url 'guide_review_mark' a.teamMember1 %}">{{a.teamMember1}}</a> </button>
+                <button class="btn"><a href="{% url 'guide_review_mark' a.teamMember2 %}">{{a.teamMember2}}</a> </button>
+                <button class="btn"><a href="{% url 'guide_review_mark' a.teamMember3 %}">{{a.teamMember3}}</a> </button>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+    <title>Team Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 55px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+        }
+
+        .team-card {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 20px);
+            /* Adjust based on the number of teams per row */
+            min-width: 300px;
+            transition: transform 0.3s ease;
+            width: 56%;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-card h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .team-card p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            color: #fff;
+            background-color: #ff6c1d;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #b35400;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">PROJECTSPHERE</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="coordinator_home">Home</a></li>
+            <li><a href="coordinator_calender">Calender</a></li>
+            <li><a href="logout_view">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <!-- Team 1 Card -->
+        <!-- <button onclick="printPage()">Print</button> -->
+        <div class="team-card">
+            <h3>{{key.teamHeadName}}</h3>
+            
+            <div class="btn-container">
+                <button class="btn"><a href="{% url 'review_1' pk=key.id pk1=key.teamHeadName pk2=key.teamHeadId %}">Review 1</a></button>
+                <button class="btn"><a href="{% url 'review_2' pk=key.id pk1=key.teamHeadName pk2=key.teamHeadId %}"> Review 2 </a></button>
+                <button class="btn"><a href="{% url 'review_3' pk=key.id pk1=key.teamHeadName pk2=key.teamHeadId %}"> Review 3 </a></button>
+                <button class="btn"><a href="{% url 'review_attendence' pk=key.id pk1=key.teamHeadName pk2=key.teamHeadId %}">Review Attendence</a> </button>
+                <button class="btn"><a href="{% url 'review_report' pk=key.id pk1=key.teamHeadName pk2=key.teamHeadId %}">Review Report</a> </button>
+                <button class="btn"><a href="{% url 'review_guide' pk=key.id pk1=key.teamHeadName pk2=key.teamHeadId %}"> Guide Mark </a></button>
+                <button class="btn"><a href="{% url 'review_ese' pk=key.id pk1=key.teamHeadName pk2=key.teamHeadId %}"> ESE </a></button>
+                
+            </div>
+        </div>
+        
+        <div class="team-card">
+            <h3>{{key.teamMember1}}</h3>
+            <div class="btn-container">
+                <button class="btn"><a href="{% url 'review_1' pk=key.id pk1=key.teamMember1 pk2=key.teamMember1Id %}"> Review 1 </a></button>
+                <button class="btn"><a href="{% url 'review_2' pk=key.id pk1=key.teamMember1 pk2=key.teamMember1Id %}"> Review 2 </a></button>
+                <button class="btn"><a href="{% url 'review_3' pk=key.id pk1=key.teamMember1 pk2=key.teamMember1Id %}"> Review 3 </a></button>
+                <button class="btn"><a href="{% url 'review_attendence' pk=key.id pk1=key.teamMember1 pk2=key.teamMember1Id %}">Review Attendence</a> </button>
+                <button class="btn"><a href="{% url 'review_report' pk=key.id pk1=key.teamMember1 pk2=key.teamMember1Id %}">Review Report</a> </button>
+                <button class="btn"><a href="{% url 'review_guide' pk=key.id pk1=key.teamMember1 pk2=key.teamMember1Id %}"> Guide Mark </a></button>
+                <button class="btn"><a href="{% url 'review_ese' pk=key.id pk1=key.teamMember1 pk2=key.teamMember1Id %}"> ESE </a></button>
+                
+            </div>
+        </div>
+        
+        <div class="team-card">
+            <h3>{{key.teamMember2}}</h3>
+            
+            <div class="btn-container">
+                <button class="btn"><a href="{% url 'review_1' pk=key.id pk1=key.teamMember2 pk2=key.teamMember2Id %}">Review 1</a></button>
+
+                <button class="btn"><a href="{% url 'review_2' pk=key.id pk1=key.teamMember2 pk2=key.teamMember2Id %}"> Review 2 </a></button>
+                <button class="btn"><a href="{% url 'review_3' pk=key.id pk1=key.teamMember2 pk2=key.teamMember2Id %}"> Review 3 </a></button>
+                <button class="btn"><a href="{% url 'review_attendence' pk=key.id pk1=key.teamMember2 pk2=key.teamMember2Id %}">Review Attendence</a> </button>
+                <button class="btn"><a href="{% url 'review_report' pk=key.id pk1=key.teamMember2 pk2=key.teamMember2Id %}">Review Report</a> </button>
+                <button class="btn"><a href="{% url 'review_guide' pk=key.id pk1=key.teamMember2 pk2=key.teamMember2Id %}"> Guide Mark </a></button>
+                <button class="btn"><a href="{% url 'review_ese' pk=key.id pk1=key.teamMember2 pk2=key.teamMember2Id %}"> ESE </a></button>
+            </div>
+        </div>
+        
+        <div class="team-card">
+            <h3>{{key.teamMember3}}</h3>
+            
+            <div class="btn-container">
+                <button class="btn"><a href="{% url 'review_1' pk=key.id pk1=key.teamMember3 pk2=key.teamMember3Id %}"> Review 1 </a></button>
+                <button class="btn"><a href="{% url 'review_2' pk=key.id pk1=key.teamMember3 pk2=key.teamMember3Id %}"> Review 2 </a></button>
+                <button class="btn"><a href="{% url 'review_3' pk=key.id pk1=key.teamMember3 pk2=key.teamMember3Id %}"> Review 3 </a></button>
+                <button class="btn"><a href="{% url 'review_attendence' pk=key.id pk1=key.teamMember3 pk2=key.teamMember3Id %}">Review Attendence</a> </button>
+                <button class="btn"><a href="{% url 'review_report' pk=key.id pk1=key.teamMember3 pk2=key.teamMember3Id %}">Review Report</a> </button>
+                <button class="btn"><a href="{% url 'review_guide' pk=key.id pk1=key.teamMember3 pk2=key.teamMember3Id %}"> Guide Mark </a></button>
+                <button class="btn"><a href="{% url 'review_ese' pk=key.id pk1=key.teamMember3 pk2=key.teamMember3Id %}"> ESE </a></button>
+                
+            </div>
+        </div>
+        
+
+        
+    </div>
+    <script>
+        function printPage() {
+            window.print();
+        }
+    </script>
+</body>
+
+</html>

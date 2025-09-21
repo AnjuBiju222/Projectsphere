@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'signup.css' %}" />  <!-- Assuming signup.css is in your static files directory -->
+    <title>Project Management Sign in & Sign up</title>
+</head>
+
+<body><!DOCTYPE html>
+    <html lang="en">
+    {% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{% static 'signup.css' %}">  
+        <title>Project Management Sign in & Sign up</title>
+    </head>
+    
+    <body>
+        <div class="container">
+            <div class="forms-container">
+                <div class="signin-signup">
+                    <form action="{% url 'signup' %}" method="POST" class="sign-up-form" id="signup-form">
+                        {% csrf_token %}
+                        <h2 class="title">Join our project management platform!</h2>
+                        <div class="input-field">
+                            <i class="fas fa-user"></i>
+                            <input type="text" name="username" placeholder="Choose a username" required>
+                        </div>
+                        <div class="input-field">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="input-field">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" name="password" placeholder="Choose a password" required>
+                        </div>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="userType" value="student" checked>
+                                <span class="radio-custom"></span>
+                                Student
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="userType" value="staff">
+                                <span class="radio-custom"></span>
+                                Staff
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="userType" value="coordinator">
+                                <span class="radio-custom"></span>
+                                Coordinator
+                            </label>
+                        </div>
+                        <input type="submit" class="btn" value="Sign up">
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+        <script src="{% static 'signup.js' %}"></script>
+    </body>
+    
+    </html>
+    
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <form action="{% url 'signup' %}" method="POST" class="sign-up-form" id="signup-form">
+                    {% csrf_token %}
+                    <h2 class="title">Join our project management platform!</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="username" placeholder="Choose a username" required />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" name="email" placeholder="Enter your email" required />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="password" placeholder="Choose a password" required />
+                    </div>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="userType" value="student" checked>
+                            <span class="radio-custom"></span>
+                            Student
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="userType" value="staff">
+                            <span class="radio-custom"></span>
+                            Staff
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="userType" value="coordinator">
+                            <span class="radio-custom"></span>
+                            Coordinator
+                        </label>
+                    </div>
+                    <input type="submit" class="btn" value="Sign up" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'signup.js' %}"></script>  <!-- Assuming signup.js is in your static files directory -->
+</body>
+
+</html>

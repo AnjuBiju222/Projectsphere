@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Project</title>
+    <!-- Link Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Link your custom CSS files -->
+    <link rel="stylesheet" href="static/css/register_project.css">
+    <link rel="stylesheet" href="static/css/home.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">PROJECTSPHERE</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="student_home">Home</a></li>
+            <li><a href="view_calender">Calender</a></li>
+            <li><a href="submit_resource">Resources</a></li>
+            <!-- <li><a href="#">Account</a></li> -->
+            <li><a href="logout_view">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        
+                <h2 class="text-center">{{hello}}</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="row" style="padding: 8px;">
+                        <div class="col-md-6">
+                            <label for="teamName" class="form-label">Project Team Name:</label>
+                            <input type="text" class="form-control" id="teamName" name="teamName" value="{{ab.teamName}}" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="projectTitle" class="form-label">Project Title:</label>
+                            <input type="text" class="form-control" id="projectTitle" name="projectTitle" value="{{ab.projectTitle}}" required>
+                        </div>
+                    </div>
+
+                    <div class="row" style="padding: 8px;">
+                        <div class="col-md-6">
+                            <label for="teamHeadName" class="form-label">Team Head Name:</label>
+                            <input type="text" value="{{name}}" class="form-control" id="teamHeadName" name="teamHeadName" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="teamHeadId" class="form-label">Team Head ID:</label>
+                            <input type="text" value="{{id}}" class="form-control" id="teamHeadId" name="teamHeadId" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row" style="padding: 8px;">
+                        <div class="col-md-6">
+                            <label for="username" class="form-label">Username:</label>
+                            <input type="text" value="{{username}}" class="form-control" id="username" name="username" required>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="row" style="padding: 8px;">
+                        <div class="col-md-6">
+                            <label for="teamMember1" class="form-label">Team Member 1:</label>
+                            <input type="text" class="form-control" id="teamMember1" name="teamMember1" value="{{ab.teamMember1}}" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="teamMember1Id" class="form-label">Team Member 1 ID:</label>
+                            <input type="text" class="form-control" id="teamMember1Id" name="teamMember1Id" value="{{ab.teamMember1Id}}" required>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="row" style="padding: 8px;">
+                        <div class="col-md-6">
+                            <label for="teamMember2" class="form-label">Team Member 2:</label>
+                            <input type="text" class="form-control" id="teamMember2" name="teamMember2" value="{{ab.teamMember2}}" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="teamMember2Id" class="form-label">Team Member 2 ID:</label>
+                            <input type="text" class="form-control" id="teamMember2Id" name="teamMember2Id" value="{{ab.teamMember2Id}}" required>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="row" style="padding: 8px;">
+                        <div class="col-md-6">
+                            <label for="teamMember3" class="form-label">Team Member 3:</label>
+                            <input type="text" class="form-control" id="teamMember3" name="teamMember3" value="{{ab.teamMember3}}" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="teamMember3Id" class="form-label">Team Member 3 ID:</label>
+                            <input type="text" class="form-control" id="teamMember3Id" name="teamMember3Id" value="{{ab.teamMember3Id}}" required>
+                        </div>
+                    </div>
+                    
+                    <center>
+                        <button type="submit" style="padding: 10px;">Submit</button>
+                    </center>
+                    
+                </form>
+            
+    </div>
+
+    <!-- Link Bootstrap JS and Popper.js (required for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        // You can add JavaScript validation or submission handling here
+        document.getElementById('projectForm').addEventListener('submit', function(event) {
+            // Add your form submission logic here
+            alert('Form submitted successfully!');
+            // Prevent the default form submission
+            event.preventDefault();
+        });
+    </script>
+</body>
+
+</html>

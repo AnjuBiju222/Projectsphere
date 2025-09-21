@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../home.css">
+    <title>Project Progress</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            /* padding: 20px; */
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 3rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        a{  
+            text-decoration: none;
+            color: #fff;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .gantt-container {
+            width: 100%;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        .gantt-bar {
+            height: 20px;
+            margin-bottom: 10px;
+            background-color: #ff7700;
+        }
+
+        .gantt-bar span {
+            display: block;
+            height: 100%;
+            background-color: #ff7700;
+        }
+
+        .pie-chart-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .pie-chart {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #f4f4f4;
+            position: relative;
+        }
+
+        .pie-chart::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            clip-path: conic-gradient(#007bff 0%, #55a6ff 50%, transparent 50%);
+        }
+
+        .pie-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Added styles for week progress */
+        .week-progress {
+            margin-bottom: 10px;
+        }
+
+        .week-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .pie-chart-container {
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+
+        .pie-chart-circle {
+            fill: none;
+            stroke-width: 4;
+            stroke: #f4f4f4; /* Background color */
+            transform: rotate(-90deg); /* Start from the top */
+            transform-origin: 50% 50%;
+        }
+
+        .pie-chart-value {
+            fill: none;
+            stroke-width: 4;
+            stroke-linecap: round;
+            stroke: #ff7700; /* Color based on percentage */
+            transition: stroke-dashoffset 0.3s ease;
+            transform: rotate(-90deg); /* Start from the top */
+            transform-origin: 50% 50%;
+        }
+        .pie-chart-text {
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            fill: #000; /* Text color */
+            text-anchor: middle;
+            dominant-baseline: middle;
+        }
+    </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="logo">
+        <a href="#">PROJECTSPHERE</a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Calender</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Account</a></li>
+    </ul>
+  </nav>
+    <div class="container">
+        <h2>Project Progress</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>LBT21CS004</td>
+                    <td>adithyahpd@gmail.com</td>
+                    <td>Adithya M</td>
+                </tr>
+                <!-- Add more rows for team members -->
+            </tbody>
+        </table>
+
+        <!-- Week-wise progress -->
+        <h2>Week-wise progress</h2>
+        <div class="week-progress">
+            <div class="week-label">Week 1 </div>
+            <div class="gantt-container">
+                <div class="gantt-bar" style="width: 20%;"><span></span></div>
+            </div>
+        </div>
+
+        <div class="week-progress">
+            <div class="week-label">Week 2 </div>
+            <div class="gantt-container">
+                <div class="gantt-bar" style="width: 40%;"><span></span></div>
+            </div>
+        </div>
+
+        <div class="week-progress">
+            <div class="week-label">Week 3 </div>
+            <div class="gantt-container">
+                <div class="gantt-bar" style="width: 60%;"><span></span></div>
+            </div>
+        </div>
+        <!-- Add more week progress divs as needed -->
+        <h2 >Overall project progress</h2>
+        <div class="pie-chart-container">
+            <svg viewBox="0 0 100 100" class="pie-chart-svg">
+                <circle cx="50" cy="50" r="40" class="pie-chart-circle"></circle>
+                <circle cx="50" cy="50" r="40" class="pie-chart-value" style="stroke-dasharray: 251.2; stroke-dashoffset: calc(251.2 - (251.2 * 75) / 100);"></circle>
+                <!-- Adjust the stroke-dasharray and stroke-dashoffset based on percentage -->
+                <text x="50" y="50" class="pie-chart-text">75%</text>
+            </svg>
+        </div>
+    </div>
+</body>
+
+</html>

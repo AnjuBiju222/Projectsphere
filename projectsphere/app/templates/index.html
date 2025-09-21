@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <!-- <link rel="stylesheet" href="static/css/index.css">  -->
+    <style>
+        body {
+            background-image: url(https://cdn.pixabay.com/video/2023/08/03/174468-851502076_tiny.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0; /* Remove default margin */
+        }
+
+        .container {
+            background-color: transparent; /* Set container background to transparent */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+        }
+
+        .form-section {
+            background-color: rgba(70, 69, 69, 0.7); /* Example semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Additional styles */
+        select, button {
+            margin-bottom: 10px;
+        }
+         
+.clkbtn {
+    height: 40px;
+    width: 130px;
+    border-radius: 50px;
+    background-image: linear-gradient(to right,
+            rgb(255, 195, 110),
+            rgb(255, 146, 91));
+    font-size: 22px;
+    border: none;
+    cursor: pointer;
+}
+select {
+    height: 40px;
+    width: 200px;
+    outline: none;
+    border: none;
+    color: rgb(77, 77, 77);
+    background-color: rgb(240, 240, 240);
+    border-radius: 50px;
+    padding-left: 30px;
+    font-size: 18px;
+}
+
+.login-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+ 
+ 
+ 
+    </style>
+</head>
+<body>
+    <div class="container"> 
+        <div class="form-section">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="login-box">
+                    <h3 style="color: rgb(236, 191, 168);">Select the User</h3>
+                    
+                    <select name="user" id="">
+                        <option value="Student">Student</option>
+                        <option value="Co_ordinator">Co-ordinator</option>
+                        <option value="Guide">Guide</option>
+                    </select>
+                    <button class="clkbtn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+</body>
+</html>

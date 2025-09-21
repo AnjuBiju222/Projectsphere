@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/coordinator_home.css' %}">
+    <title>Project Management</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+        th {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="logo">
+            <a class="navbar-brand" href="#">PROJECTSPHERE</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="coordinator_home">Home</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="#">Account</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="coordinator_calender">Calender</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="logout_view">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="hero mt-5">
+            <h1>Welcome, <span id="project">Prof.Lekshmi!</span> </h1>
+        </section>
+        <section class="featuress-c ">
+            <!-- <h2>Create Announcement</h2> -->
+            <form method="post" class="card" style="background-color: #f36913;">
+                {% csrf_token %}
+                <div class="container">
+                    
+                    <div class="form-group">
+                        <label for="subject">Week</label>
+                        <input type="text" class="form-control" id="week" name="week" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">What to Submit</label>
+                        <input type="text" class="form-control" id="data" name="data" required>
+                    </div>
+                    
+                </div>
+                <button type="submit" class="btn btn-light">Create</button>
+            </form>
+            <table>
+                <tr>
+                    <th>Week</th>
+                    <th>Submit</th>
+                </tr>
+                {% for i in key %}
+                <tr>
+                    <td>{{i.week}}</td>
+                    <td>{{i.submit}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </section>
+    </div>
+
+    <!-- <footer class="footer mt-5">
+        <div class="container">
+            <p>&copy; 2024 Project Management</p>
+        </div>
+    </footer> -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

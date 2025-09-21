@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/home.css">
+    <title>Project Management</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">PROJECTSPHERE</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="coordinator_home">Home</a></li>
+            <li><a href="coordinator_calender">Calender</a></li>
+            
+            <li><a href="logout_view">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Your content goes here --> 
+    <div class="container">
+        <section class="hero">
+            <h1>Welcome,<span id="project"> {{name}}!</span> </h1>
+            <p id="tasks">Manage projects, tasks, and collaborate seamlessly.</p>
+        </section>
+        <section class="features">
+            <div class="feature">
+                    <h2>Guide</h2>
+                    <p>Guide teams through project reviews, provide feedback, and ensure project quality.</p>
+                    <div class="row">
+                        <a id="link-c" href="create_guide" style="color: red;">Add</a>
+                        <a id="link-c" href="coordinator_view_guide" style="color: red;">View</a>
+                    </div>
+            </div>
+            <div class="feature">
+                    <h2>Announcement</h2>
+                
+                <p>Share important deadlines, announcements, and project updates with teams.</p>
+                <div class="row">
+                    <a id="link-c" href="coordinator_announcement" style="color: red;">Add</a>
+                    <a id="link-c" href="view_announcement" style="color: red;">View</a>
+                </div>
+            </div>
+            <div class="feature">
+                <a href="view_resource_one">
+                    <h2>Resources</h2>
+                </a>
+                
+                <p>Access and review documents submitted by teams.</p>
+            </div>
+            <div class="feature">
+                <a href="view_team">
+                    <h2>View Teams</h2>
+                </a>
+                    <p>Manage your student teams, monitor progress, provide guidance, and evaluate project milestones effectively.</p>
+            </div>
+            <div class="feature">
+                <a href="coordinator_review">
+                    <h2>Reviews</h2>
+                </a>
+                    <p>Review Marks.</p>
+            </div>
+            
+        </section>
+        
+    </div>
+
+</body>
+
+</html>
